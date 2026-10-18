@@ -378,6 +378,18 @@
         "datasets/jiudian/reconstruction_inputs/defects.json": "c3579d39d18c91f1552983aa6812441db4cf8430590afa388d2ba1656191c09c",
         "datasets/jiudian/reconstruction_inputs/README.md": "963b9775a277da8300bf3f3de0670b4d6157fb7852499dd5929db704acf1104c"
       }
+    },
+    {
+      "name": "jiudian-high-quality-runtime-v1.tar.gz",
+      "url": "https://github.com/yankaiyang317-web/gs-agent-eval/releases/download/jiudian-runtime-v1/jiudian-high-quality-runtime-v1.tar.gz",
+      "bytes": 22565176,
+      "sha256": "ac12983b777b40d25660b3da019db6185ac072140bf8d802c68ea8c7ba5a4c81",
+      "optional": false,
+      "members": {
+        "datasets/jiudian/reference/jiudian_reference.collision.glb": "186017f47b453064f577428840a6fa16c202e6f40b663490da494d106e339858",
+        "datasets/jiudian/reference/scene.json": "9302eb43bb32f542a15dc72ded901844997a8f07d017efb4148dd61bc99031de"
+      }
     }
-  ]
+  ],
+  "runtime_supplement_release": "jiudian-runtime-v1"
 }

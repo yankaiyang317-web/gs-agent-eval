@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "configs_loaded_by_original_agent_loader": [
+    {
+      "config": "scenes/jiudian.json",
+      "name": "jiudian",
+      "ply": "datasets/jiudian/reference/jiudian_reference.ply",
+      "collision": "datasets/jiudian/reference/jiudian_reference.collision.glb",
+      "start": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "config": "scenes/jiudian_degraded.json",
+      "name": "jiudian_degraded",
+      "ply": "datasets/jiudian/navigation/jiudian_degraded.ply",
+      "collision": "datasets/jiudian/navigation/jiudian_degraded.collision.glb",
+      "start": [
+        0.0,
+        0.0,
+        -0.15
+      ]
+    },
+    {
+      "config": "datasets/jiudian/reference/scene.json",
+      "name": "jiudian",
+      "ply": "datasets/jiudian/reference/jiudian_reference.ply",
+      "collision": "datasets/jiudian/reference/jiudian_reference.collision.glb",
+      "start": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "config": "datasets/jiudian/navigation/scene.json",
+      "name": "jiudian_degraded",
+      "ply": "datasets/jiudian/navigation/jiudian_degraded.ply",
+      "collision": "datasets/jiudian/navigation/jiudian_degraded.collision.glb",
+      "start": [
+        0.0,
+        0.0,
+        -0.15
+      ]
+    }
+  ],
+  "clean_supplement_extraction_verified": true,
+  "all_default_data_verified": true,
+  "evaluation_scoring_code_changed": false
+}

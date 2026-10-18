@@ -1,23 +1,27 @@
 {
-  "release": "gs-agent-eval-v0.1.1",
-  "frozen_on": "2026-10-18",
+  "publication": "jiudian-runtime-v1",
+  "evaluator_version": "0.1.1",
   "benchmark": "jiudian_degraded_full_inputs_v1",
+  "date": "2026-10-18",
+  "base_evaluator_release": "v0.1.1",
+  "base_manifest": "provenance/releases/v0.1.1/RELEASE_MANIFEST.json",
+  "changes": "Add portable high-quality hotel runtime config and original collision mesh to default downloads. Scoring and frozen benchmark unchanged.",
   "source_sha256": {
     ".github/workflows/tests.yml": "dee605f04861d1fbd2708f62bbd41d584f6e375f43ea316895d610795d9078f7",
     ".gitignore": "04d6602f858c138d1ee4b1c9a5bb40a6b39246eb32a323b8858fd2768297d47e",
     "AGENTS.md": "fe7db253202cd7efc3a0ea332349587e2d6783fc73df13316a50ebc805aece82",
-    "CHANGELOG.md": "2f72fa00682c94b48a16d8e7ff8fd15f89e50e7c325180e24c23989f9baee0cd",
+    "CHANGELOG.md": "24a86a67337f3d3087881f13bda52303c485e04b474b058d005949164f7bc46d",
     "Dockerfile": "3258c63b2a0a3839e8509a32cda8b1af9b2dd7c24a7f807e4062a2fb24970d4d",
     "Dockerfile.machine25": "f40c2db6b0183b88afe4e42ad00fd83312790762e3b5bdd7e0be8d2784534c90",
-    "README.md": "2daee52ed5943f99f778b0fd389e46aafb0a8f8407c735849952239184f2bd2c",
+    "README.md": "3cfc398f0068d0ce6b23f02b215cac133c8db4df1a591a5c8336403a9f26e65a",
     "benchmarks/jiudian_degraded_full_inputs_v1.json": "de26e769016079057ffc7f231333868081bc1d801f00f1eb0c02f168c63d508e",
-    "datasets/DATA_CARD.md": "4220a61cacfc45e62f2c08c935fc7c14a2f2430cecb8772c3a0f30af6b14c4b6",
-    "datasets/jiudian-downloads.json": "803631920dc3dcc221879c3be230bdadb9a9385896eec4267c7114e64d36c53a",
+    "datasets/DATA_CARD.md": "0a0fc1d4ee9b39654adb974b65551ffd22013e1a7e242a0190f8a7c427239c82",
+    "datasets/jiudian-downloads.json": "74e40cfa5aba7a1dd1af98c282ba8b440b6644ed00e8b904af1f4b7a32df168a",
     "docs/ARCHITECTURE.md": "d3ac16f9555464938bc931e49d88a48be869eaa7df08cabd664af171eed32468",
     "docs/CHANGES.md": "c9c9f12f6ecfa7fedbb3af5cc48841dd7367a3a93be4fa3e1e6b44641e8a5b23",
     "docs/EXPERIMENTS.md": "603abc1785913a2a0400a6ffe9da11d6fcc992148e925c955f996635a84b1b60",
     "docs/FROZEN_PROTOCOL.md": "bc2242796a00585ff7144e2e485ad3829f97594df52c01f74ad076202265672f",
-    "docs/USAGE_WITH_AGENT.md": "af4fc7ad8e10d398e4a1c85c3e69a1d8cc36090c269c52b6d40ea704deec6811",
+    "docs/USAGE_WITH_AGENT.md": "ecb2b96b8f451a26f2cc1ee85f5ef5c9e0e24f19fec716748fc6b40a42c6b00c",
     "docs/images/jiudian_baseline.jpg": "d28bd534023980bed1993d344835e99d1e3da7c7ebdc662d114235f2a6490fc0",
     "docs/images/reliability_and_scores.png": "f42e3231f27723c452177ebe55b5f569d81c0e35c680fe49fdad83d36a29861d",
     "fixtures/clip_000/campaign.json": "ce8db589229b52668beda77a04a5581ef02a20f16fb096dcc7123afa65397979",
@@ -64,6 +68,8 @@
     "provenance/experiments/gt_augmentation_validation_20261016/summary.json": "5e39b69043d5af72a1650986380f903d9c9e172eae662ebc9c84762721776594",
     "provenance/experiments/three_clip_run_20261016/REPORT.md": "96d73ab0204f882fbd33638c1e250e5f1ee1e21724fb0c865a4e4899c0bdb18f",
     "provenance/experiments/three_clip_run_20261016/run_receipt.json": "21d9c4a1e9c3704a5fff2e18628bac3d82c5231f1bd2e6d4b5aacee199c44032",
+    "provenance/hotel_runtime/RUNTIME_MANIFEST.json": "ee373cc76e23a8a8b822591e805fc6e8fd6ef3406a7abd8371b610e31a1d0a52",
+    "provenance/hotel_runtime/VALIDATION.json": "17739925fae0392d501a087dbc6b5d70d46d64e278d5e19be4fc51d88c96d68f",
     "provenance/publication_validation/cpu_tests.log": "dd4ee10fae75b907f6a975b9819c3845440e8cb1612097352bce056587269011",
     "provenance/publication_validation/cpu_tests.xml": "ebfe3dd594ea8c1c3ac8cbc17a71a399cf8e44c51a6a6762bc0ef20e73d3bd4d",
     "provenance/publication_validation/download_verify.log": "41c0404242fba2256652b8070f4eabf60ee9cb8dafdcd9ed192799d26348d1be",
@@ -77,6 +83,7 @@
     "provenance/release_validation/parity_receipt.json": "3c8f2fd401563c90d66ee6ff9df2136ab9a36d8968d01d7c234c3f39d7d1f6ed",
     "provenance/release_validation/runtime.json": "3edb198ccfdaba97ac4ef51cfd24630d2c8b5d6ef5a9e5b59b5599a76561feb3",
     "provenance/releases/v0.1.0/RELEASE_MANIFEST.json": "152841fe91895a1364b38d3cc2a6e016fb672150de9659aef05cc084de4e3ed3",
+    "provenance/releases/v0.1.1/RELEASE_MANIFEST.json": "b6f88ec836261458264682a01e9085b6f9b809bd3c0f2e062f642d5d60112dce",
     "provenance/runtime_image.json": "cf1ee2229d65ffec4521d6994776ac1228c1f7727ad218ed86f0734ce3da1e63",
     "pyproject.toml": "6bfa417d5aeb3749d85cd0637ee8813a0179767e8a670223816e2a7683db1802",
     "requirements-tested.txt": "15ea0bfabfa29490c4f1836b3e2e5e88fe29f4ba5ae7032d733f8b2c937d7212",
@@ -87,9 +94,10 @@
     "research_snapshots/report_gt_augmentation.py": "d96fc11e268173406ab1b3a7f6354e5c7a5969b618c2f170ce986e7a125e937c",
     "research_snapshots/validate_frame_value.py": "5beb115998ea3a4a1fecde26028168e5fc47669a3cf7e8f563f113cb8fc7c582",
     "research_snapshots/validate_gt_augmentation.py": "10d5c519a2f841490b8339b239b4dcf845607635606eec978a4d92e0fccea366",
+    "scenes/jiudian.json": "557ec2633534d0cfe671813820fb72aa9020eaa5d155cfdc5fdba994cfbc6491",
     "scenes/jiudian_degraded.json": "5793cc8271f890ea5af7ba712a08ccbbd49e6a00291f7fedb1eea544225f38e6",
     "scripts/check_release.py": "dc00f1230b4f71c8086c948e68eeae1c2b00fd8aec7aeaa96076ce83167fe08e",
-    "scripts/download_benchmark.py": "c55ce1a48b502c2075675a3e5c249b2016f361c54117d16a18e49291f7565b03",
+    "scripts/download_benchmark.py": "615a2409e786f647945b2b679743ce5001b4592ea635341f2f1a896540c8f800",
     "scripts/final_check.py": "b709243f092509da7acf5d41f1afb759dce589eb631853412e3cf864af2b5d14",
     "scripts/freeze_release.py": "6a41a6088b65b9f83fce73950f3a5b007ae67ade787ff54d7e9d584f2c8263ce",
     "scripts/test_eval_gpu.py": "d8a6884080d48c58df498a9ce53cc9caabe57176f60d32ba7929163ca6674f95",
@@ -99,44 +107,57 @@
     "tests/test_download.py": "e87a025f3d75ea3072da9d5d9be9aeefad1013faae16cb525021f7fab9213c80",
     "tests/test_frozen.py": "10292f756323414191b821482aaab48ccc17f501f21a981911bb017a5ea22a3d"
   },
-  "downloads_manifest": "datasets/jiudian-downloads.json",
   "validation": {
     "passed": true,
-    "version": "0.1.1",
-    "baseline_from_packaged_assets_only": true,
-    "original_agent_asset_mount_required": false,
-    "all_scene_state_input_archives_verified": true,
-    "parity": {
-      "passed": true,
-      "agent_modules_blocked": true,
-      "checks": [
-        {
-          "clip": 1,
-          "coverage": 0.3420932453190518,
-          "B": 1.4372340433939585,
-          "expected_B": 1.4372340433939585,
-          "B_abs_error": 0.0
-        },
-        {
-          "clip": 2,
-          "coverage": 0.3686635944700461,
-          "B": 2.1322442031821036,
-          "expected_B": 2.1322442031821036,
-          "B_abs_error": 0.0
-        },
-        {
-          "clip": 3,
-          "coverage": 0.45115622534977373,
-          "B": 1.781812181319436,
-          "expected_B": 1.781812181319436,
-          "B_abs_error": 0.0
-        }
-      ],
-      "B_tolerance": 1e-06,
-      "coverage_tolerance": 1e-10
-    },
-    "public_Dockerfile_fresh_build_tested": false
+    "configs_loaded_by_original_agent_loader": [
+      {
+        "config": "scenes/jiudian.json",
+        "name": "jiudian",
+        "ply": "datasets/jiudian/reference/jiudian_reference.ply",
+        "collision": "datasets/jiudian/reference/jiudian_reference.collision.glb",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "config": "scenes/jiudian_degraded.json",
+        "name": "jiudian_degraded",
+        "ply": "datasets/jiudian/navigation/jiudian_degraded.ply",
+        "collision": "datasets/jiudian/navigation/jiudian_degraded.collision.glb",
+        "start": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      {
+        "config": "datasets/jiudian/reference/scene.json",
+        "name": "jiudian",
+        "ply": "datasets/jiudian/reference/jiudian_reference.ply",
+        "collision": "datasets/jiudian/reference/jiudian_reference.collision.glb",
+        "start": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "config": "datasets/jiudian/navigation/scene.json",
+        "name": "jiudian_degraded",
+        "ply": "datasets/jiudian/navigation/jiudian_degraded.ply",
+        "collision": "datasets/jiudian/navigation/jiudian_degraded.collision.glb",
+        "start": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    ],
+    "clean_supplement_extraction_verified": true,
+    "all_default_data_verified": true,
+    "evaluation_scoring_code_changed": false
   },
-  "original_agent_modified_by_this_publication": false,
-  "scientific_status": "Frozen reproducible pilot; B is weak-region view utility, not guaranteed reconstruction improvement."
+  "original_agent_modified": false
 }

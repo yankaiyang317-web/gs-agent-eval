@@ -1,3 +1,7 @@
+# Hotel runtime supplement (2026-10-18)
+
+Added the original high-quality hotel collision GLB, portable high-quality configs and default download registration. Evaluator version/formulas and frozen benchmark data are unchanged. Existing v0.1.1 release assets remain intact.
+
 # Changes
 
 ## 0.1.1 — 2026-10-18

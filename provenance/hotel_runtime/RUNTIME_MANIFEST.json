@@ -1,0 +1,16 @@
+{
+  "data_release": "jiudian-runtime-v1",
+  "evaluator_version": "0.1.1",
+  "source_original_config": "/machine25_data1/gs-agent/scenes/jiudian.json",
+  "parameters_unchanged_except_asset_paths": true,
+  "high_ply_sha256": "6e6d103f4d1acb6ef615f412e5dabdbb538e74c1c9f67b01527f726eb47c67d4",
+  "original_high_ply_sha256": "6e6d103f4d1acb6ef615f412e5dabdbb538e74c1c9f67b01527f726eb47c67d4",
+  "collision_sha256": "186017f47b453064f577428840a6fa16c202e6f40b663490da494d106e339858",
+  "original_collision_sha256": "186017f47b453064f577428840a6fa16c202e6f40b663490da494d106e339858",
+  "archive_sha256": "ac12983b777b40d25660b3da019db6185ac072140bf8d802c68ea8c7ba5a4c81",
+  "archive_bytes": 22565176,
+  "members": {
+    "datasets/jiudian/reference/jiudian_reference.collision.glb": "186017f47b453064f577428840a6fa16c202e6f40b663490da494d106e339858",
+    "datasets/jiudian/reference/scene.json": "9302eb43bb32f542a15dc72ded901844997a8f07d017efb4148dd61bc99031de"
+  }
+}

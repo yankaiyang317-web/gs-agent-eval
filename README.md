@@ -14,9 +14,9 @@ cd gs-agent-eval
 python scripts/download_benchmark.py
 ```
 
-代码放Git；场景和固定状态由脚本从 [v0.1.1 Release](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/v0.1.1) 下载并逐文件校验。默认下载低质量PLY、碰撞GLB、高质量参考PLY和固定状态；`--inputs`额外下载全部160张合成RGB及对应辅助RGB-D。详见 [数据说明](datasets/DATA_CARD.md)。
+代码放Git；场景和固定状态由脚本从 [v0.1.1 Release](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/v0.1.1) 下载并逐文件校验。默认下载低质量PLY、碰撞GLB、高质量参考PLY和固定状态；`--inputs`额外下载全部160张合成RGB及对应辅助RGB-D。高质量酒店的原有碰撞 GLB 与运行配置由 [酒店运行补充包](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/jiudian-runtime-v1) 提供，当前默认下载会一并获取。详见 [数据说明](datasets/DATA_CARD.md)。
 
-导航仅使用 `datasets/jiudian/navigation/`；GT和评测状态只给独立离线评测器。原项目可使用 `scenes/jiudian_degraded.json`，或只挂载navigation目录并使用其中的scene.json。
+导航仅使用 `datasets/jiudian/navigation/`；GT和评测状态只给独立离线评测器。原项目可使用 `scenes/jiudian_degraded.json`，或只挂载navigation目录并使用其中的scene.json。单独测试高质量酒店时使用 `scenes/jiudian.json`，或挂载reference目录并使用其中的scene.json；它复用原酒店配置与原碰撞网格，仅将资源路径改成可下载的相对路径。
 
 ```bash
 # 在CUDA环境安装；测试过的版本见requirements-tested.txt。

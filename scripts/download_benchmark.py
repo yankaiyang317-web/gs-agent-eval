@@ -54,6 +54,6 @@ def main():
             print('Downloading/verifying',asset['name'],flush=True);archive=root/'.downloads'/asset['name'];download(asset['url'],archive,asset['sha256']);extract_verified(archive,root,asset['members'])
         else:verify_files(root,asset['members'])
         print('Verified',asset['name'],len(asset['members']),'files',flush=True)
-    print('Ready: scenes/jiudian_degraded.json (host); datasets/jiudian/navigation/scene.json (navigation-only mount).',flush=True)
+    print('Ready: low-quality scenes/jiudian_degraded.json; high-quality scenes/jiudian.json. Portable mounts: datasets/jiudian/navigation/scene.json and datasets/jiudian/reference/scene.json.',flush=True)
 
 if __name__=='__main__':main()

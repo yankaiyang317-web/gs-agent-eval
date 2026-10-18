@@ -1,0 +1,57 @@
+{
+  "name": "jiudian",
+  "ply": "../datasets/jiudian/reference/jiudian_reference.ply",
+  "collision_mesh": "../datasets/jiudian/reference/jiudian_reference.collision.glb",
+  "initial_pose": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quaternion_wxyz": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "camera": {
+    "width": 320,
+    "height": 240,
+    "fx": 160.0,
+    "fy": 120.0,
+    "cx": 160.0,
+    "cy": 120.0
+  },
+  "collision": {
+    "camera_radius": 0.25,
+    "camera_body_height": 0.9,
+    "step": 0.02,
+    "world_to_asset": [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  }
+}
