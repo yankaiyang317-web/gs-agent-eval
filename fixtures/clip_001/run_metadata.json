@@ -1,0 +1,12 @@
+{
+  "trajectory_origin": "codex_vision_guided_low_scene_exploration",
+  "source_trajectory": "/app/outputs/navigation_three_clips_20261016/runs/jiudian_degraded/run_20261016_045934_115963/trajectory.jsonl",
+  "source_trajectory_sha256": "794d01e0724476f533d8e4bd530e9ebe7e1c0a992f3f6992b09da9f89c0706f7",
+  "campaign_frame_range_inclusive": [
+    81,
+    161
+  ],
+  "segmentation": "exact consecutive rows; frame reindexed only; all other source fields preserved",
+  "continuous_campaign": true,
+  "independent_trial": false
+}

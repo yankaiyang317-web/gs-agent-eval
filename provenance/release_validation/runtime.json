@@ -1,0 +1,8 @@
+{
+  "python": "3.11.10 | packaged by conda-forge | (main, Oct 16 2024, 01:27:36) [GCC 13.3.0]",
+  "torch": "2.5.1+cu121",
+  "CUDA": "12.1",
+  "GPU": "NVIDIA L40",
+  "installed_wheel": "gs_agent_eval-0.1.0-py3-none-any.whl",
+  "gsplat": "1.5.3"
+}

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "agent_modules_blocked": true,
+  "checks": [
+    {
+      "clip": 1,
+      "coverage": 0.3420932453190518,
+      "B": 1.4372340433939585,
+      "expected_B": 1.4372340433939585,
+      "B_abs_error": 0.0
+    },
+    {
+      "clip": 2,
+      "coverage": 0.3686635944700461,
+      "B": 2.1322442031821036,
+      "expected_B": 2.1322442031821036,
+      "B_abs_error": 0.0
+    },
+    {
+      "clip": 3,
+      "coverage": 0.45115622534977373,
+      "B": 1.781812181319436,
+      "expected_B": 1.781812181319436,
+      "B_abs_error": 0.0
+    }
+  ],
+  "B_tolerance": 1e-06,
+  "coverage_tolerance": 1e-10
+}

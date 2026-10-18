@@ -1,0 +1,7 @@
+ARG RUNTIME_IMAGE=gs-agent-offline-eval:20261016
+FROM ${RUNTIME_IMAGE}
+WORKDIR /eval
+COPY . /eval
+RUN python -m pip install --no-deps --no-build-isolation .
+ENV MPLCONFIGDIR=/tmp/matplotlib
+ENTRYPOINT ["gs-agent-eval"]

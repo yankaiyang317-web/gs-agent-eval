@@ -1,0 +1,7 @@
+{
+  "image_id": "sha256:0001525d79275d93b81efc665efd36b697e9f47ee82844933449f8aead49795f",
+  "repo_tags": [
+    "gs-agent-offline-eval:20261016"
+  ],
+  "usage": "Existing tested CUDA runtime. Preserve/export/push this image separately if migrating servers; the code archive does not include the image."
+}

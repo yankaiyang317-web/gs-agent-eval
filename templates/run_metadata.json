@@ -1,0 +1,15 @@
+{
+  "scene": "jiudian_degraded",
+  "agent_version": "FILL_AGENT_COMMIT_OR_VERSION",
+  "method_id": "FILL_PROMPT_MEMORY_OR_POLICY_VARIANT",
+  "prompt_sha256": "FILL_IF_AVAILABLE",
+  "model": "FILL_MODEL_NAME",
+  "seed": null,
+  "environment": {
+    "collision_sha256": "85b55ac6c9d9747b2bde6700cfef87d7dac89e1487c595825aee4b85a8a11c69",
+    "camera_radius": 0.25,
+    "camera_body_height": 0.9,
+    "collision_step": 0.02
+  },
+  "notes": "This is a template, not proof these settings were used. Populate environment from the actual runtime. Do not blindly copy it onto an old run."
+}

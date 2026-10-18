@@ -1,0 +1,6 @@
+{
+  "scene": "jiudian_degraded",
+  "exploration_objective": "coverage",
+  "video_segment_frames": 81,
+  "video_fps": 9
+}

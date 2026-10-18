@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "jiudian_degraded_full_inputs_v1",
+  "scene_name": "jiudian_degraded",
+  "frozen_on": "2026-10-18",
+  "status": "frozen_reproducible_pilot; B predictive validity remains provisional",
+  "locations": {
+    "asset_root": "../datasets/jiudian",
+    "state_root": "../benchmark_data/jiudian_degraded_full_inputs_v1"
+  },
+  "assets": {
+    "low_ply": {
+      "path": "${asset_root}/navigation/jiudian_degraded.ply",
+      "sha256": "9e3e864f209eaf1f919ce5d1f8185a6c7e78f45a5f985a0d964ed0530781a6f3"
+    },
+    "high_ply": {
+      "path": "${asset_root}/reference/jiudian_reference.ply",
+      "sha256": "6e6d103f4d1acb6ef615f412e5dabdbb538e74c1c9f67b01527f726eb47c67d4"
+    },
+    "collision": {
+      "path": "${asset_root}/navigation/jiudian_degraded.collision.glb",
+      "sha256": "85b55ac6c9d9747b2bde6700cfef87d7dac89e1487c595825aee4b85a8a11c69"
+    },
+    "reference_surface": {
+      "path": "${state_root}/reference_surface.npz",
+      "sha256": "24bf5e022e57e1112b603229c546d9c4b66ec3f327107a0e6d280b2025d838fd"
+    },
+    "defect_weights": {
+      "path": "${state_root}/defect_weights.npz",
+      "sha256": "3097d5fd08918ec53971233654bcd1cb5671e93aee4b1081bfcc5635abb8892a"
+    },
+    "reliability": {
+      "path": "${state_root}/reliability_RGBDN.npz",
+      "sha256": "01d304333b5b017895b23726e0732bfff37318db530bd9900c3c0cc097894516"
+    },
+    "calibration_protocol": {
+      "path": "${state_root}/calibration_protocol.json",
+      "sha256": "f7b0d0e932aa10036bab20b1b53f235d86a940fec763b6530d549ca7303df2e5"
+    }
+  },
+  "budget": {
+    "frames": 81,
+    "unit": "recorded_frames_including_interpolation_and_duplicates"
+  },
+  "camera_fov_signature": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "coordinates": {
+    "camera": "OpenCV camera_to_world, +X right, +Y down, +Z forward",
+    "world_up": [
+      0,
+      1,
+      0
+    ]
+  },
+  "navigation": {
+    "collision_sha256": "85b55ac6c9d9747b2bde6700cfef87d7dac89e1487c595825aee4b85a8a11c69",
+    "camera_radius": 0.25,
+    "camera_body_height": 0.9,
+    "collision_step": 0.02
+  },
+  "scoring": {
+    "high_to_low_similarity": {
+      "scale": 1.0,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "verified": true,
+      "evidence": "low built from calibrated high renders in same coordinate system; inspect preflight overlays before verification; operator checked preflight image: matching windows, counters and ceiling layout; no SfM realignment was used; operator checked preflight image: matching windows, counters and ceiling layout; no SfM realignment was used"
+    },
+    "roi": {
+      "min": [
+        -4.2,
+        -2.2,
+        -8.5
+      ],
+      "max": [
+        4.8,
+        2.4,
+        0.6
+      ]
+    },
+    "evaluation_camera": {
+      "width": 320,
+      "height": 240,
+      "resize_policy": "preserve_fov"
+    },
+    "surface": {
+      "voxel_size": 0.2,
+      "reference_pixel_stride": 2,
+      "near": 0.1,
+      "far": 12.0,
+      "alpha_high_min": 0.9,
+      "visibility_abs_tolerance": 0.1,
+      "visibility_rel_tolerance": 0.01,
+      "min_projected_voxel_pixels": 1.0
+    },
+    "residual": {
+      "rgb_weight": 1.0,
+      "depth_weight": 1.0,
+      "depth_relative_clip": 1.0,
+      "depth_floor": 0.1,
+      "alpha_low_depth_min": 0.7,
+      "loss_epsilon": 0.0001
+    },
+    "trajectory_checks": {
+      "translation_jump": 2.0,
+      "rotation_jump_deg": 120.0
+    }
+  },
+  "reference_domain": {
+    "reachability": "collision_checked_routes_connected_to_configured_start",
+    "meaning": "partial fixed camera-bank pseudo-GT domain, not full physical scene",
+    "connected_positions": 47,
+    "reference_views": 112,
+    "route_source": "/machine25_data1/gs-agent/outputs/jiudian_synthetic_20261015/collision_validation.json",
+    "frozen_before_test_trajectories": true,
+    "pilot_resolution": true
+  },
+  "calibration": {
+    "frames": 128,
+    "heldout_excluded": 32,
+    "normal_source": "saved depth finite differences",
+    "lambda_evidence": 0.01,
+    "lambda_loss": 10,
+    "normal_weight": 0.15,
+    "state": "immutable per-Gaussian scalar logodds RGBDN",
+    "limitations": [
+      "not full 2D GauSS-MI",
+      "fixed view utility mean does not remove between-frame redundancy",
+      "reference domain is partial and not proven converged",
+      "p is not an externally calibrated correctness probability"
+    ]
+  }
+}

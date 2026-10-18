@@ -1,0 +1,48 @@
+{
+  "fingerprint": "df1b9aab805d107c7ce3ab7aa49ee9a7551d828363bb795943f07b5c1cb1df77",
+  "primary": "full_input_RGBDN_B",
+  "scores": [
+    {
+      "clip": 1,
+      "frames": 81,
+      "old_B": 0.49974459076930855,
+      "full_input_RGBD_B": 1.0737237704326614,
+      "full_input_RGBDN_B": 1.4372340433939585,
+      "constant_p05_B": 0.4783867441759741,
+      "unknown_state_render_mass": 1.6095143263165997e-09,
+      "A_surface_coverage_unchanged": 0.3420932453190518
+    },
+    {
+      "clip": 2,
+      "frames": 81,
+      "old_B": 0.5883863692025175,
+      "full_input_RGBD_B": 1.7453324537744797,
+      "full_input_RGBDN_B": 2.1322442031821036,
+      "constant_p05_B": 0.5241372954278487,
+      "unknown_state_render_mass": 2.1206828515204727e-08,
+      "A_surface_coverage_unchanged": 0.3686635944700461
+    },
+    {
+      "clip": 3,
+      "frames": 81,
+      "old_B": 0.5836508115567063,
+      "full_input_RGBD_B": 1.3518184935978967,
+      "full_input_RGBDN_B": 1.781812181319436,
+      "constant_p05_B": 0.5321523402186533,
+      "unknown_state_render_mass": 5.603854591940309e-08,
+      "A_surface_coverage_unchanged": 0.45115622534977373
+    }
+  ],
+  "diagnostics": {
+    "old_constant_spearman": 0.8706506107930965,
+    "full_RGBDN_constant_spearman": 0.5264069274930699,
+    "RGBD_RGBDN_spearman": 0.9736781691386506
+  },
+  "source_assets_and_legacy_cache_unchanged": true,
+  "original_code_files_unchanged": 98,
+  "state_hashes": {
+    "RGBD": "4bcf5500075aed5f2497b65c6a511d1cb52997da4ebf0f3ed21ca51dd7f3cf36",
+    "RGBDN": "01d304333b5b017895b23726e0732bfff37318db530bd9900c3c0cc097894516"
+  },
+  "interpretation": "Actual full training-input evidence, fixed-snapshot per-frame utility; not realized repair gain. New calibration protocol, old numeric scores shown as diagnostics only."
+}

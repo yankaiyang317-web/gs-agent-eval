@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "scene_id": "jiudian_degraded_pilot_v1",
+  "method_id": "continuous_clip_3",
+  "budget_mode": "recorded_frames",
+  "requested_frames": 81,
+  "evaluated_frames": 81,
+  "metric_families": {
+    "A_surface_coverage": {
+      "primary": {
+        "surface_coverage_at_81": 0.45115622534977373
+      },
+      "supporting": {
+        "surface_coverage_auc_81": 0.29329995638239365
+      },
+      "at_evaluated_frames": 0.45115622534977373
+    },
+    "B_view_value": {
+      "primary": {
+        "frozen_gaussmi_mean": 0.5836508115567063
+      },
+      "observed_reference": {
+        "gt_rgb_residual_mean": 0.061362984049835326,
+        "gt_relative_depth_residual_mean": 0.10186162700645882,
+        "valid_reference_frames": 81,
+        "invalid_reference_fraction": 0.0
+      },
+      "supporting": {
+        "defect_weighted_coverage_at_81": 0.3969506444366763
+      },
+      "defect_status": "available",
+      "interpretation": "prediction_and_reference_residuals_not_realized_repair_gain"
+    }
+  },
+  "comparability": {
+    "continuous_navigation_comparable": true,
+    "reference_fingerprint": "54385dbb0f488efea60a655b8e834ef790d6094213e4c4e7ac6d8737406050ab",
+    "reliability_fingerprint": "8041957f126054cf3bc0e5a62d1bb60f944bb53ebfeacd25bc77e1b85d22ec73",
+    "protocol_fingerprint": "54385dbb0f488efea60a655b8e834ef790d6094213e4c4e7ac6d8737406050ab",
+    "fov_signature": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "start_camera_to_world": [
+      [
+        0.6343933343887329,
+        -2.0498165387294875e-09,
+        -0.7730104327201843,
+        1.5921839475631714
+      ],
+      [
+        0.0,
+        -1.0,
+        2.6517321671803984e-09,
+        0.2799999713897705
+      ],
+      [
+        -0.7730104327201843,
+        -1.6822412352013316e-09,
+        -0.6343933343887329,
+        -1.563589334487915
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "diagnostics": {
+    "reference_voxels": 24087,
+    "invalid_reference_frames": 0,
+    "reliability_status": "degenerate_or_unvalidated",
+    "trajectory_origin": "codex_vision_guided_low_scene_exploration",
+    "spearman_prediction_rgb": 0.0727636170621252,
+    "spearman_prediction_depth": 0.15680937807040327,
+    "example_indices": [
+      0,
+      20,
+      40,
+      48,
+      60,
+      64,
+      80
+    ]
+  },
+  "trajectory_diagnostics": {
+    "sampled_path_length": 9.819999535202857,
+    "total_rotation_deg": 263.5995511283732,
+    "duplicate_pose_ratio": 0.14814814814814814,
+    "jump_frames": [],
+    "teleport_events": [],
+    "continuous_navigation_comparable": true,
+    "collision_action_count": null
+  },
+  "reference_domain": {
+    "reachability": "collision_checked_routes_connected_to_configured_start",
+    "meaning": "partial fixed camera-bank pseudo-GT domain, not full physical scene",
+    "connected_positions": 47,
+    "reference_views": 112,
+    "route_source": "/machine25_data1/gs-agent/outputs/jiudian_synthetic_20261015/collision_validation.json",
+    "frozen_before_test_trajectories": true,
+    "pilot_resolution": true
+  },
+  "inputs": {
+    "low_sha256": "9e3e864f209eaf1f919ce5d1f8185a6c7e78f45a5f985a0d964ed0530781a6f3",
+    "high_sha256": "6e6d103f4d1acb6ef615f412e5dabdbb538e74c1c9f67b01527f726eb47c67d4",
+    "trajectory_sha256": "2176be5cc5eeceb434a66f70006d73eedf5f1445d095a19252566bc843dfe9f9",
+    "config": "/app/eval_configs/jiudian_pilot_v1.json",
+    "method_metadata": {
+      "trajectory_sha256": "2176be5cc5eeceb434a66f70006d73eedf5f1445d095a19252566bc843dfe9f9",
+      "fov_signature": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "trajectory_origin": "codex_vision_guided_low_scene_exploration",
+      "source_trajectory": "/app/outputs/navigation_three_clips_20261016/runs/jiudian_degraded/run_20261016_045934_115963/trajectory.jsonl",
+      "source_trajectory_sha256": "794d01e0724476f533d8e4bd530e9ebe7e1c0a992f3f6992b09da9f89c0706f7",
+      "campaign_frame_range_inclusive": [
+        162,
+        242
+      ],
+      "segmentation": "exact consecutive rows; frame reindexed only; all other source fields preserved",
+      "continuous_campaign": true,
+      "independent_trial": false,
+      "campaign_metadata": {
+        "scene": "jiudian_degraded",
+        "exploration_objective": "coverage",
+        "video_segment_frames": 81,
+        "video_fps": 9
+      }
+    }
+  },
+  "formula": "frozen_gaussmi_3d_v1",
+  "elapsed_s": 43.539039029041305
+}

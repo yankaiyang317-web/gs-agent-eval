@@ -1,0 +1,9 @@
+Processing /eval
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: gs-agent-eval
+  Building wheel for gs-agent-eval (pyproject.toml): started
+  Building wheel for gs-agent-eval (pyproject.toml): finished with status 'done'
+  Created wheel for gs-agent-eval: filename=gs_agent_eval-0.1.1-py3-none-any.whl size=32916 sha256=f8cdc501c071bd59798f9e559ded6a44d911bcd087dc0dd53edb2f3fa80ffadf
+  Stored in directory: /tmp/pip-ephem-wheel-cache-e074adp2/wheels/8a/16/46/278b5d73ffd30c9745dbcb77a8848a6bf7bbe8b44e59ec8979
+Successfully built gs-agent-eval

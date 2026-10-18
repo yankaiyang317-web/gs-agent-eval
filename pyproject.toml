@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gs-agent-eval"
+version = "0.1.1"
+description = "Frozen offline coverage and weak-region view utility evaluation for GSAgent trajectories"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "Pillow>=10", "plyfile>=1.1", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+gpu = ["torch==2.5.1", "gsplat==1.5.3"]
+test = ["pytest>=8"]
+
+[project.scripts]
+gs-agent-eval = "gs_agent_eval.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["gs_eval*", "gs_agent_eval*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-p", "no:cacheprovider"]

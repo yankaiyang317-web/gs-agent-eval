@@ -1,0 +1,27 @@
+{
+  "source": "/machine25_data1/gs-agent-offline-eval-20261016",
+  "source_sha256": {
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/storage.py": "3dd93729f7e6ef1615b1a82f8be2b14246ef39a97d69bafb153338939f385647",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/config.py": "8cf77602b92fdc8bbadd3b121c73163fdb73b925602eb85a5080a7d52ba47b7c",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/__init__.py": "155fc59be84c233c1362b29783e2788070dec7a9dc17f0355146645059eadb25",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/alignment.py": "65b515dc3ff0e18c912e2d647674cdfb3075367946e252b6c258075c6e8dd336",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/geometry.py": "567098d5ec6c1ce8fd22555bac591db613fcb7e9bf7099d156b9998b308b0e54",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/scoring.py": "c6b58027e010cc8ebe93a485e015f6d745c5c0ec0eb9864e33dcb37ad83c5e32",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/__main__.py": "56812ed3a8897cc5d4c5e961a2b7cf51336b8194a3a48fee618f5a47e80c1fea",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/trajectory.py": "cd310ad4da98529f647fbbca544370e32503052c488509563c39ab373594dcf9",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/evaluation.py": "70377af1e661ae2c7d82f4b640f00a1fcb6ca883792b86a40514fd28cbf4ba17",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/renderer.py": "d5d8f20497e826e8e407e4d7d457ac0fcb303a9f5f1b28ab13294f75b446a586",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/cli.py": "f94d6ead728a1b03ae8dd3fd11febf3feb2e50a64fcce3c9bb8d94d96626085d",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/reporting.py": "abddf94d4668457831044e9f81622ee96d6c6443b722294f84ecbc1ef9331227",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_eval/cache.py": "0b432d2bdf209511ce1cece3aed6fe61dfb503fe757a2daeb5c56c0169cdf7a0",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_env/rendering/ply_loader.py": "ae18ae61e993909adfeae129929c2ead1bda165877be34f34f729ab38e3b9f9e",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_env/geometry/transforms.py": "8f268fef5e66c57cb7d2fa90539db95bb5c468ee035cc10f6c73fc826123fc3f",
+    "/machine25_data1/gs-agent-offline-eval-20261016/gs_env/types.py": "ed91e463dffea43ea9661f30881b4e6f5ba74071ab5ff6083277c96dacb346f7"
+  },
+  "modifications": [
+    "renderer and COLMAP imports point to frozen internal helpers",
+    "cache source fingerprint uses frozen vendored helpers instead of active gs_env",
+    "new CLI scores externally frozen full-input state; no recalibration during score"
+  ],
+  "original_navigation_modified": false
+}

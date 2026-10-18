@@ -1,0 +1,6 @@
+{
+  "B_vs_global_RGB_net": 0.39999999999999997,
+  "B_vs_weak_region_RGB_net": 0.39999999999999997,
+  "B_vs_weak_region_depth_net": 0.39999999999999997,
+  "interpretation": "4 groups from one scene; descriptive ranks only, not significance or general validity"
+}

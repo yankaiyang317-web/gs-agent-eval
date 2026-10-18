@@ -1,0 +1,77 @@
+{
+  "protocol_fingerprint": "df1b9aab805d107c7ce3ab7aa49ee9a7551d828363bb795943f07b5c1cb1df77",
+  "protocol_sha256": "f7b0d0e932aa10036bab20b1b53f235d86a940fec763b6530d549ca7303df2e5",
+  "input_models": {
+    "/machine25_data1/gs-agent/outputs/jiudian_synthetic_20261015/jiudian_degraded.ply": "9e3e864f209eaf1f919ce5d1f8185a6c7e78f45a5f985a0d964ed0530781a6f3",
+    "/machine25_data1/gs-agent/test_data/jiudian/y253p58x.ply": "6e6d103f4d1acb6ef615f412e5dabdbb538e74c1c9f67b01527f726eb47c67d4"
+  },
+  "legacy_cache": {
+    "root": "/app/outputs/eval_cache/jiudian_pilot_v1/54385dbb0f488efea60a655b8e834ef790d6094213e4c4e7ac6d8737406050ab",
+    "reliability.npz": "857993cf02191b7ac616b9098c13545385667160494910191ac36d41381b3423",
+    "reference_surface.npz": "24bf5e022e57e1112b603229c546d9c4b66ec3f327107a0e6d280b2025d838fd",
+    "defect_weights.npz": "3097d5fd08918ec53971233654bcd1cb5671e93aee4b1081bfcc5635abb8892a",
+    "reference_manifest.json": "dd073971ad8b000270b76346f784194b588b20b47523106b92918d0b01ac578b"
+  },
+  "trajectories": {
+    "/app/outputs/evaluation/three_clip_run_20261016/inputs/clip_000/trajectory.jsonl": "eca2db597c1fe97857452f8295287dbcf516cec94a43f83c3add5403fb439edb",
+    "/app/outputs/evaluation/three_clip_run_20261016/inputs/clip_001/trajectory.jsonl": "84dfae44913fee76e4b378d71baa2b0d0a9d6a095004fe548552f3c1f96e034b",
+    "/app/outputs/evaluation/three_clip_run_20261016/inputs/clip_002/trajectory.jsonl": "2176be5cc5eeceb434a66f70006d73eedf5f1445d095a19252566bc843dfe9f9"
+  },
+  "config_sha256": "8f9d2c338bd39828dda17ac16e4094be06f8c38cd58d8a38607ffeae2f098629",
+  "implementation": {
+    "gs_eval/__init__.py": "155fc59be84c233c1362b29783e2788070dec7a9dc17f0355146645059eadb25",
+    "gs_eval/__main__.py": "56812ed3a8897cc5d4c5e961a2b7cf51336b8194a3a48fee618f5a47e80c1fea",
+    "gs_eval/alignment.py": "65b515dc3ff0e18c912e2d647674cdfb3075367946e252b6c258075c6e8dd336",
+    "gs_eval/cache.py": "0b432d2bdf209511ce1cece3aed6fe61dfb503fe757a2daeb5c56c0169cdf7a0",
+    "gs_eval/cli.py": "f94d6ead728a1b03ae8dd3fd11febf3feb2e50a64fcce3c9bb8d94d96626085d",
+    "gs_eval/config.py": "8cf77602b92fdc8bbadd3b121c73163fdb73b925602eb85a5080a7d52ba47b7c",
+    "gs_eval/evaluation.py": "70377af1e661ae2c7d82f4b640f00a1fcb6ca883792b86a40514fd28cbf4ba17",
+    "gs_eval/geometry.py": "567098d5ec6c1ce8fd22555bac591db613fcb7e9bf7099d156b9998b308b0e54",
+    "gs_eval/renderer.py": "d5d8f20497e826e8e407e4d7d457ac0fcb303a9f5f1b28ab13294f75b446a586",
+    "gs_eval/reporting.py": "abddf94d4668457831044e9f81622ee96d6c6443b722294f84ecbc1ef9331227",
+    "gs_eval/scoring.py": "c6b58027e010cc8ebe93a485e015f6d745c5c0ec0eb9864e33dcb37ad83c5e32",
+    "gs_eval/storage.py": "3dd93729f7e6ef1615b1a82f8be2b14246ef39a97d69bafb153338939f385647",
+    "gs_eval/trajectory.py": "cd310ad4da98529f647fbbca544370e32503052c488509563c39ab373594dcf9",
+    "gs_env/__init__.py": "870d4072e0535486927baf0fcf838b7de77535405d92f9622b89a68af69144ea",
+    "gs_env/camera.py": "8c02daa14adf5163ddce9f4b821e9cccbea904d90e1cd828755b80ec5a9c626c",
+    "gs_env/collision/__init__.py": "989f4fe490ad80a6bc022745f764c01c92017b53225f5f61e68757a9458d104d",
+    "gs_env/collision/mesh.py": "948ebe1a53f6efdb73f84c19e8ddb96728ebf5e2fc517363295dba80e595aa6d",
+    "gs_env/environment.py": "0201722b28484cc51ef6520f7471e3a8a1475c934a16bfa0a39e84823560011c",
+    "gs_env/geometry/__init__.py": "3f94e01289130443e9441047212d457799735802347eeeb77035d645cc54ee72",
+    "gs_env/geometry/colmap.py": "0f7c9af8027fbbcd2c7b6cc0b26ccc514ecdc8076315fc6bde608ad12da1fc14",
+    "gs_env/geometry/look_at.py": "3ef03bce1b28bbf6a7d696e1e34c8ddd54f99701172d6431a135cb46e4ff7e7c",
+    "gs_env/geometry/transforms.py": "8f268fef5e66c57cb7d2fa90539db95bb5c468ee035cc10f6c73fc826123fc3f",
+    "gs_env/geometry/unproject.py": "69b30363ab19f889a32a50c0c47f1fd2b2cce63ad2e1b76088a87c4e640dcf58",
+    "gs_env/rendering/__init__.py": "05c9cce77dcecbde6a19d6c748aa4d3828a30434acc1433a490f0c97b641685d",
+    "gs_env/rendering/gsplat_renderer.py": "84aa4c14061dde9aa12522946b8d101890f154bc49bade9618b844963b32bc28",
+    "gs_env/rendering/ply_loader.py": "ae18ae61e993909adfeae129929c2ead1bda165877be34f34f729ab38e3b9f9e",
+    "gs_env/scene_manifest.py": "cc28fd5e749699b3da7c88e0f6b98a476984820eece74aaf4c62aae7b83a0271",
+    "gs_env/types.py": "ed91e463dffea43ea9661f30881b4e6f5ba74071ab5ff6083277c96dacb346f7"
+  },
+  "versions": {
+    "python": "3.11.10",
+    "numpy": "2.4.6",
+    "torch": "2.5.1+cu121",
+    "gsplat": "1.5.3",
+    "Pillow": "10.2.0"
+  },
+  "verified_all_128_training_inputs": true,
+  "excluded_32_heldout_frames": true,
+  "normal_and_gaussian_attribution_checks_passed": true,
+  "legacy_score_replay_tolerance": 1e-06,
+  "original_98_code_files_unchanged": true,
+  "new_files": {
+    "REPORT.md": "098b2ebd315f2c57d2318ee4f451c1cbae1217855f1be258e83037255a6f9e70",
+    "calibration_summary.json": "2e579fdba892cc4777e7d09fd4737fa07ae3566cde0d7f99dd434555c67def20",
+    "input_check_000.jpg": "649208cdbc71c29a738182e6c7ba02ee886594ef45fce27c2c41a20d5c80bdaa",
+    "input_check_064.jpg": "a5898d6b0486a738cefd0ce683529d06871b4e3ab923895c803aa060aa5f10b1",
+    "input_check_127.jpg": "d2704daa7be2cfc341a82debfcb0cb2e6ed1eb47bb5a793fd6c9a74bf6d0b094",
+    "per_frame_scores.csv": "621b6cedcce670b0db40971af33f6a250c5e5f2e1f70bcfdd71cdc2133fa3e84",
+    "protocol.json": "f7b0d0e932aa10036bab20b1b53f235d86a940fec763b6530d549ca7303df2e5",
+    "reliability_RGBD.npz": "4bcf5500075aed5f2497b65c6a511d1cb52997da4ebf0f3ed21ca51dd7f3cf36",
+    "reliability_RGBDN.npz": "01d304333b5b017895b23726e0732bfff37318db530bd9900c3c0cc097894516",
+    "reliability_and_scores.png": "f42e3231f27723c452177ebe55b5f569d81c0e35c680fe49fdad83d36a29861d",
+    "scores.json": "ca2cbde4888001e83495fca2afb9ebac799d5019a84ab93e898e315e8469b977"
+  },
+  "finalizer_sha256": "2dbab810942bc264f3929306be9210c1062323e603a679bde9669bbf744ef987"
+}
