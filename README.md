@@ -14,9 +14,14 @@ cd gs-agent-eval
 python scripts/download_benchmark.py
 ```
 
-代码放Git；场景和固定状态由脚本从 [v0.1.1 Release](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/v0.1.1) 下载并逐文件校验。默认下载低质量PLY、碰撞GLB、高质量参考PLY和固定状态；`--inputs`额外下载全部160张合成RGB及对应辅助RGB-D。高质量酒店的原有碰撞 GLB 与运行配置由 [酒店运行补充包](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/jiudian-runtime-v1) 提供，当前默认下载会一并获取。详见 [数据说明](datasets/DATA_CARD.md)。
+默认同时下载酒店的**高质量和低质量两个场景**，各自包含 PLY、碰撞 GLB 和运行配置，统一放在 [酒店场景数据包](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/jiudian-scenes-v1)。同一命令还会下载固定评测状态；`--inputs` 额外下载全部 160 张合成重建输入。下载后逐文件校验，不需要再手动传场景。
 
-导航仅使用 `datasets/jiudian/navigation/`；GT和评测状态只给独立离线评测器。原项目可使用 `scenes/jiudian_degraded.json`，或只挂载navigation目录并使用其中的scene.json。单独测试高质量酒店时使用 `scenes/jiudian.json`，或挂载reference目录并使用其中的scene.json；它复用原酒店配置与原碰撞网格，仅将资源路径改成可下载的相对路径。
+| 场景 | 用途 | 原 Agent 的配置入口 |
+|---|---|---|
+| 高质量酒店 `jiudian` | 原 Agent 默认探索的酒店，可直接运行测试 | `scenes/jiudian.json` |
+| 低质量酒店 `jiudian_degraded` | 本仓库的低质量探索与离线评测基线 | `scenes/jiudian_degraded.json` |
+
+在原 Agent 的运行环境中选择对应 config 即可。高质量目录为 `datasets/jiudian/reference/`，低质量目录为 `datasets/jiudian/navigation/`，都附带便携的 `scene.json`。测试低质量场景时，Agent 只加载低质量目录；高质量数据和固定评测状态用于离线评分。详见 [使用说明](docs/USAGE_WITH_AGENT.md) 和 [数据说明](datasets/DATA_CARD.md)。
 
 ```bash
 # 在CUDA环境安装；测试过的版本见requirements-tested.txt。

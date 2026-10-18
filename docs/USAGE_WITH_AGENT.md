@@ -2,7 +2,7 @@
 
 本仓库：[yankaiyang317-web/gs-agent-eval](https://github.com/yankaiyang317-web/gs-agent-eval)。原导航项目：[gs-agent](https://github.com/yankaiyang317-web/gs-agent)。两个项目各自维护版本，通过轨迹文件连接。
 
-## 1. 下载唯一的酒店基线
+## 1. 一次下载酒店的高、低质量两个场景
 
 ```bash
 git clone https://github.com/yankaiyang317-web/gs-agent-eval.git
@@ -10,7 +10,7 @@ cd gs-agent-eval
 python scripts/download_benchmark.py
 ```
 
-默认下载低质量场景/碰撞、高质量参考、原高质量酒店碰撞GLB、两种场景运行配置和冻结状态。若要复建校准或做补图训练，再加`--inputs`下载160张合成RGB及对应辅助RGB-D。数据来自GitHub Release，代码Git历史不承载大文件。
+默认下载低质量场景/碰撞、高质量参考、原高质量酒店碰撞GLB、两种场景运行配置和冻结状态。若要复建校准或做补图训练，再加`--inputs`下载160张合成RGB及对应辅助RGB-D。高、低质量场景在同一个酒店场景数据包中，默认一起下载。数据来自GitHub Release，代码Git历史不承载大文件。
 
 ```bash
 python scripts/download_benchmark.py --inputs
@@ -54,14 +54,16 @@ python -m gs_agent_eval compare \
 
 注意独立重复、同起点和同运行条件。不同评测实现/状态/预算不能直接混比。
 
-## 高质量酒店单独运行
+## 选择两个场景进行测试
 
-更新代码后运行相同的下载命令，会复用已有正确文件并补齐高质量运行文件。高质量 PLY 已在 v0.1.1 场景包中，无需重复存储。
+两个场景默认都已下载，在原 gs-agent 的运行环境中选择配置：
 
 ```bash
-git pull --ff-only
-python scripts/download_benchmark.py
+# 高质量酒店：原 Agent 默认探索的场景
 python -m gs_mcp.server --scene-manifest /absolute/gs-agent-eval/scenes/jiudian.json
+
+# 低质量酒店：本仓库的低质量探索评测场景
+python -m gs_mcp.server --scene-manifest /absolute/gs-agent-eval/scenes/jiudian_degraded.json
 ```
 
-最后一条命令在原 gs-agent 的运行环境执行。高质量酒店起点 `[0,0,0]`、相机和碰撞参数保持原 `jiudian.json` 设置，仅资源路径调整为相对路径。只挂载高质量酒店目录时使用 `datasets/jiudian/reference/scene.json`。高质量场景用于独立功能测试；低质量冻结基准仍使用 `jiudian_degraded`，二者不能混用评分条件。
+高质量起点 `[0,0,0]`，低质量起点 `[0,0,-0.15]`；各自的原有相机、碰撞参数与网格均保留。只挂载单个场景目录时，高质量使用 `datasets/jiudian/reference/scene.json`，低质量使用 `datasets/jiudian/navigation/scene.json`。两个都可用于运行测试；当前冻结评分协议专门对应低质量 `jiudian_degraded` 的探索轨迹，不能直接将高质量运行分数混进该基准。

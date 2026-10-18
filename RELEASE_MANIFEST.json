@@ -1,27 +1,25 @@
 {
-  "publication": "jiudian-runtime-v1",
+  "publication": "jiudian-scenes-v1",
   "evaluator_version": "0.1.1",
   "benchmark": "jiudian_degraded_full_inputs_v1",
   "date": "2026-10-18",
-  "base_evaluator_release": "v0.1.1",
-  "base_manifest": "provenance/releases/v0.1.1/RELEASE_MANIFEST.json",
-  "changes": "Add portable high-quality hotel runtime config and original collision mesh to default downloads. Scoring and frozen benchmark unchanged.",
+  "description": "One default scene archive with high-quality jiudian and low-quality jiudian_degraded, each with PLY/collision/config. Scoring and asset bytes unchanged.",
   "source_sha256": {
     ".github/workflows/tests.yml": "dee605f04861d1fbd2708f62bbd41d584f6e375f43ea316895d610795d9078f7",
     ".gitignore": "04d6602f858c138d1ee4b1c9a5bb40a6b39246eb32a323b8858fd2768297d47e",
     "AGENTS.md": "fe7db253202cd7efc3a0ea332349587e2d6783fc73df13316a50ebc805aece82",
-    "CHANGELOG.md": "24a86a67337f3d3087881f13bda52303c485e04b474b058d005949164f7bc46d",
+    "CHANGELOG.md": "be9d3a0045cf91ba266af126699200257d728dabe5ca168edf678fe57d056e27",
     "Dockerfile": "3258c63b2a0a3839e8509a32cda8b1af9b2dd7c24a7f807e4062a2fb24970d4d",
     "Dockerfile.machine25": "f40c2db6b0183b88afe4e42ad00fd83312790762e3b5bdd7e0be8d2784534c90",
-    "README.md": "3cfc398f0068d0ce6b23f02b215cac133c8db4df1a591a5c8336403a9f26e65a",
+    "README.md": "91e902bdcf7fcfaf3f6de7f9afef34314f02f90aa68423cebe725c35e83b670d",
     "benchmarks/jiudian_degraded_full_inputs_v1.json": "de26e769016079057ffc7f231333868081bc1d801f00f1eb0c02f168c63d508e",
-    "datasets/DATA_CARD.md": "0a0fc1d4ee9b39654adb974b65551ffd22013e1a7e242a0190f8a7c427239c82",
-    "datasets/jiudian-downloads.json": "74e40cfa5aba7a1dd1af98c282ba8b440b6644ed00e8b904af1f4b7a32df168a",
+    "datasets/DATA_CARD.md": "057b6136b6bdd806afa36897487f045cf01831a97b2083dd308ff031cd6ce42f",
+    "datasets/jiudian-downloads.json": "f9e3c272f6289f75c1f1860bc3db396012f5ef3e06280b569483b19d6195b980",
     "docs/ARCHITECTURE.md": "d3ac16f9555464938bc931e49d88a48be869eaa7df08cabd664af171eed32468",
     "docs/CHANGES.md": "c9c9f12f6ecfa7fedbb3af5cc48841dd7367a3a93be4fa3e1e6b44641e8a5b23",
     "docs/EXPERIMENTS.md": "603abc1785913a2a0400a6ffe9da11d6fcc992148e925c955f996635a84b1b60",
     "docs/FROZEN_PROTOCOL.md": "bc2242796a00585ff7144e2e485ad3829f97594df52c01f74ad076202265672f",
-    "docs/USAGE_WITH_AGENT.md": "ecb2b96b8f451a26f2cc1ee85f5ef5c9e0e24f19fec716748fc6b40a42c6b00c",
+    "docs/USAGE_WITH_AGENT.md": "9517d0dcbf99bbb25c46d43b7b9f72b69c950ba4d36f148357140fd3be22025c",
     "docs/images/jiudian_baseline.jpg": "d28bd534023980bed1993d344835e99d1e3da7c7ebdc662d114235f2a6490fc0",
     "docs/images/reliability_and_scores.png": "f42e3231f27723c452177ebe55b5f569d81c0e35c680fe49fdad83d36a29861d",
     "fixtures/clip_000/campaign.json": "ce8db589229b52668beda77a04a5581ef02a20f16fb096dcc7123afa65397979",
@@ -70,6 +68,8 @@
     "provenance/experiments/three_clip_run_20261016/run_receipt.json": "21d9c4a1e9c3704a5fff2e18628bac3d82c5231f1bd2e6d4b5aacee199c44032",
     "provenance/hotel_runtime/RUNTIME_MANIFEST.json": "ee373cc76e23a8a8b822591e805fc6e8fd6ef3406a7abd8371b610e31a1d0a52",
     "provenance/hotel_runtime/VALIDATION.json": "17739925fae0392d501a087dbc6b5d70d46d64e278d5e19be4fc51d88c96d68f",
+    "provenance/hotel_scenes/SCENES_MANIFEST.json": "9a7e27e4a501f5fd7bfbee1f097bda76338f3e7737047a357885f1da6dafd8e9",
+    "provenance/hotel_scenes/VALIDATION.json": "5822055e557e61c204bf4b05aafcf8a001246c376ceef051fa7e3cce3f9326b8",
     "provenance/publication_validation/cpu_tests.log": "dd4ee10fae75b907f6a975b9819c3845440e8cb1612097352bce056587269011",
     "provenance/publication_validation/cpu_tests.xml": "ebfe3dd594ea8c1c3ac8cbc17a71a399cf8e44c51a6a6762bc0ef20e73d3bd4d",
     "provenance/publication_validation/download_verify.log": "41c0404242fba2256652b8070f4eabf60ee9cb8dafdcd9ed192799d26348d1be",
@@ -82,6 +82,7 @@
     "provenance/release_validation/cpu_tests.xml": "a350aac9a5cd19135e59c3539b0069706c69cace2fea7620bbd505dbbf81332b",
     "provenance/release_validation/parity_receipt.json": "3c8f2fd401563c90d66ee6ff9df2136ab9a36d8968d01d7c234c3f39d7d1f6ed",
     "provenance/release_validation/runtime.json": "3edb198ccfdaba97ac4ef51cfd24630d2c8b5d6ef5a9e5b59b5599a76561feb3",
+    "provenance/releases/jiudian-runtime-v1/RELEASE_MANIFEST.json": "71c42fca8bfc9e30366e077c4bcaa348e164168dc53b6d41109a4a781618ece4",
     "provenance/releases/v0.1.0/RELEASE_MANIFEST.json": "152841fe91895a1364b38d3cc2a6e016fb672150de9659aef05cc084de4e3ed3",
     "provenance/releases/v0.1.1/RELEASE_MANIFEST.json": "b6f88ec836261458264682a01e9085b6f9b809bd3c0f2e062f642d5d60112dce",
     "provenance/runtime_image.json": "cf1ee2229d65ffec4521d6994776ac1228c1f7727ad218ed86f0734ce3da1e63",
@@ -109,55 +110,10 @@
   },
   "validation": {
     "passed": true,
-    "configs_loaded_by_original_agent_loader": [
-      {
-        "config": "scenes/jiudian.json",
-        "name": "jiudian",
-        "ply": "datasets/jiudian/reference/jiudian_reference.ply",
-        "collision": "datasets/jiudian/reference/jiudian_reference.collision.glb",
-        "start": [
-          0.0,
-          0.0,
-          0.0
-        ]
-      },
-      {
-        "config": "scenes/jiudian_degraded.json",
-        "name": "jiudian_degraded",
-        "ply": "datasets/jiudian/navigation/jiudian_degraded.ply",
-        "collision": "datasets/jiudian/navigation/jiudian_degraded.collision.glb",
-        "start": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      },
-      {
-        "config": "datasets/jiudian/reference/scene.json",
-        "name": "jiudian",
-        "ply": "datasets/jiudian/reference/jiudian_reference.ply",
-        "collision": "datasets/jiudian/reference/jiudian_reference.collision.glb",
-        "start": [
-          0.0,
-          0.0,
-          0.0
-        ]
-      },
-      {
-        "config": "datasets/jiudian/navigation/scene.json",
-        "name": "jiudian_degraded",
-        "ply": "datasets/jiudian/navigation/jiudian_degraded.ply",
-        "collision": "datasets/jiudian/navigation/jiudian_degraded.collision.glb",
-        "start": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
-    ],
-    "clean_supplement_extraction_verified": true,
-    "all_default_data_verified": true,
-    "evaluation_scoring_code_changed": false
+    "both_scenes_in_single_default_archive": true,
+    "clean_extraction_and_all_file_hashes_verified": true,
+    "portable_configs_resolve_assets": true,
+    "scoring_source_unchanged": true
   },
   "original_agent_modified": false
 }

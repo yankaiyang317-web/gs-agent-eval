@@ -6,10 +6,10 @@
   "protocol_fingerprint": "53601276e8390ab47f0e2694a49e6a65bae2ac067860033bef0d65503ee7cd03",
   "archives": [
     {
-      "name": "jiudian-baseline-v1-scene.tar.gz",
-      "url": "https://github.com/yankaiyang317-web/gs-agent-eval/releases/download/v0.1.1/jiudian-baseline-v1-scene.tar.gz",
-      "bytes": 349626307,
-      "sha256": "3b772897b92f06589fe2ab8bc60bee4aeb4e0ed75c7f50fe8857233ecce70728",
+      "name": "jiudian-scenes-v1.tar.gz",
+      "url": "https://github.com/yankaiyang317-web/gs-agent-eval/releases/download/jiudian-scenes-v1/jiudian-scenes-v1.tar.gz",
+      "bytes": 371928159,
+      "sha256": "6ca7a5cd1310de4c24b95d71b4c4d40b872077a4399fb4581fb9ab20320989a3",
       "optional": false,
       "members": {
         "datasets/jiudian/navigation/jiudian_degraded.ply": "9e3e864f209eaf1f919ce5d1f8185a6c7e78f45a5f985a0d964ed0530781a6f3",
@@ -21,7 +21,9 @@
         "datasets/jiudian/metadata/defects.json": "c3579d39d18c91f1552983aa6812441db4cf8430590afa388d2ba1656191c09c",
         "datasets/jiudian/metadata/README.md": "963b9775a277da8300bf3f3de0670b4d6157fb7852499dd5929db704acf1104c",
         "datasets/jiudian/metadata/summary.json": "6f32cf8ad033f64c779b9f0c086b4a1da9e1a5a9a12f0ceef853a74db78f4b46",
-        "datasets/jiudian/metadata/collision_validation.json": "49ef1235fd2f7ebd28da16b32a80c8dc6fb583367339bc27e1e6ef75f34cc4f3"
+        "datasets/jiudian/metadata/collision_validation.json": "49ef1235fd2f7ebd28da16b32a80c8dc6fb583367339bc27e1e6ef75f34cc4f3",
+        "datasets/jiudian/reference/jiudian_reference.collision.glb": "186017f47b453064f577428840a6fa16c202e6f40b663490da494d106e339858",
+        "datasets/jiudian/reference/scene.json": "9302eb43bb32f542a15dc72ded901844997a8f07d017efb4148dd61bc99031de"
       }
     },
     {
@@ -378,18 +380,7 @@
         "datasets/jiudian/reconstruction_inputs/defects.json": "c3579d39d18c91f1552983aa6812441db4cf8430590afa388d2ba1656191c09c",
         "datasets/jiudian/reconstruction_inputs/README.md": "963b9775a277da8300bf3f3de0670b4d6157fb7852499dd5929db704acf1104c"
       }
-    },
-    {
-      "name": "jiudian-high-quality-runtime-v1.tar.gz",
-      "url": "https://github.com/yankaiyang317-web/gs-agent-eval/releases/download/jiudian-runtime-v1/jiudian-high-quality-runtime-v1.tar.gz",
-      "bytes": 22565176,
-      "sha256": "ac12983b777b40d25660b3da019db6185ac072140bf8d802c68ea8c7ba5a4c81",
-      "optional": false,
-      "members": {
-        "datasets/jiudian/reference/jiudian_reference.collision.glb": "186017f47b453064f577428840a6fa16c202e6f40b663490da494d106e339858",
-        "datasets/jiudian/reference/scene.json": "9302eb43bb32f542a15dc72ded901844997a8f07d017efb4148dd61bc99031de"
-      }
     }
   ],
-  "runtime_supplement_release": "jiudian-runtime-v1"
+  "scene_release": "jiudian-scenes-v1"
 }

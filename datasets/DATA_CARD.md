@@ -1,4 +1,4 @@
-# Jiudian degraded reconstruction baseline v1
+# Hotel scenes: high quality and low quality
 
 This single-scene benchmark pairs a degraded hotel Gaussian scene for Agent navigation with a high-quality Gaussian reference for offline evaluation.
 
@@ -6,9 +6,11 @@ This single-scene benchmark pairs a degraded hotel Gaussian scene for Agent navi
 
 - Navigation: `jiudian_degraded.ply`, its generated capsule-collision GLB, and a portable scene manifest. Start `[0,0,-0.15]`, camera quaternion wxyz `[0,1,0,0]`, world up `+Y`, capsule radius `.25`, body height `.9`, collision step `.02`.
 - Offline reference: the owner-provided hotel Gaussian PLY. It is pseudo-GT, not measured physical ground truth.
-- High-quality runtime supplement: the original hotel collision GLB and portable scene config (`scenes/jiudian.json` / `reference/scene.json`). The PLY is reused from the existing scene archive. Original start `[0,0,0]`, camera and collision parameters are preserved. This is for separate high-quality hotel runs, not the degraded evaluation protocol.
+- High-quality hotel runtime: the original hotel collision GLB and portable scene config (`scenes/jiudian.json` / `reference/scene.json`). The PLY is reused from the existing scene archive. Original start `[0,0,0]`, camera and collision parameters are preserved. This is for separate high-quality hotel runs, not the degraded evaluation protocol.
 - Frozen state: 24,087 reference voxels and defect weights; reliability from all128 original training RGB-D views with depth-derived normals. The32 original held-out views are excluded from calibration.
 - Optional reconstruction inputs: all160 synthetic RGB PNGs at1920×1440 and saved RGB-D initialization observations at480×360, camera poses/intrinsics, split/training metadata, and documented defects.
+
+Both hotel scenes are distributed together in one scene archive and downloaded by default, with separate configs. The high-quality `jiudian` is the original Agent default scene; low-quality `jiudian_degraded` is the frozen evaluation scene.
 
 Download scripts verify release archive SHA256 and each extracted file. The frozen scoring protocol is `benchmarks/jiudian_degraded_full_inputs_v1.json`.
 

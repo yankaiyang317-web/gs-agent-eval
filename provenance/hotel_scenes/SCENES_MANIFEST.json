@@ -1,0 +1,26 @@
+{
+  "publication": "jiudian-scenes-v1",
+  "scene_names": [
+    "jiudian",
+    "jiudian_degraded"
+  ],
+  "default_download_both": true,
+  "single_scene_archive": "jiudian-scenes-v1.tar.gz",
+  "sha256": "6ca7a5cd1310de4c24b95d71b4c4d40b872077a4399fb4581fb9ab20320989a3",
+  "bytes": 371928159,
+  "all_members_unchanged": true,
+  "members": {
+    "datasets/jiudian/navigation/jiudian_degraded.ply": "9e3e864f209eaf1f919ce5d1f8185a6c7e78f45a5f985a0d964ed0530781a6f3",
+    "datasets/jiudian/navigation/jiudian_degraded.collision.glb": "85b55ac6c9d9747b2bde6700cfef87d7dac89e1487c595825aee4b85a8a11c69",
+    "datasets/jiudian/reference/jiudian_reference.ply": "6e6d103f4d1acb6ef615f412e5dabdbb538e74c1c9f67b01527f726eb47c67d4",
+    "datasets/jiudian/navigation/scene.json": "0bd5b3108cb2676cf75481fddd2ac751e2a99db3592a0b55c219750a19db86b1",
+    "datasets/jiudian/metadata/training.json": "b5595ce0e6b5286731f9c71b9bf8305b447ed17ff895deca710729d4de39f100",
+    "datasets/jiudian/metadata/transforms.json": "1d14612c813aca135c76f2c2c6128e2f0493a4a1c048822d129b6537cd44b486",
+    "datasets/jiudian/metadata/defects.json": "c3579d39d18c91f1552983aa6812441db4cf8430590afa388d2ba1656191c09c",
+    "datasets/jiudian/metadata/README.md": "963b9775a277da8300bf3f3de0670b4d6157fb7852499dd5929db704acf1104c",
+    "datasets/jiudian/metadata/summary.json": "6f32cf8ad033f64c779b9f0c086b4a1da9e1a5a9a12f0ceef853a74db78f4b46",
+    "datasets/jiudian/metadata/collision_validation.json": "49ef1235fd2f7ebd28da16b32a80c8dc6fb583367339bc27e1e6ef75f34cc4f3",
+    "datasets/jiudian/reference/jiudian_reference.collision.glb": "186017f47b453064f577428840a6fa16c202e6f40b663490da494d106e339858",
+    "datasets/jiudian/reference/scene.json": "9302eb43bb32f542a15dc72ded901844997a8f07d017efb4148dd61bc99031de"
+  }
+}

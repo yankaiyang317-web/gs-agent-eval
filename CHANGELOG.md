@@ -1,3 +1,7 @@
+# Unified hotel scenes (2026-10-18)
+
+Default download now uses one scene archive containing both the original high-quality hotel and the degraded hotel, each with PLY, collision GLB and config. Scoring formulas and scene bytes unchanged.
+
 # Hotel runtime supplement (2026-10-18)
 
 Added the original high-quality hotel collision GLB, portable high-quality configs and default download registration. Evaluator version/formulas and frozen benchmark data are unchanged. Existing v0.1.1 release assets remain intact.
