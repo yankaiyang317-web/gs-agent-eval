@@ -2,7 +2,7 @@
 
 本仓库：[yankaiyang317-web/gs-agent-eval](https://github.com/yankaiyang317-web/gs-agent-eval)。原导航项目：[gs-agent](https://github.com/yankaiyang317-web/gs-agent)。两个项目各自维护版本，通过轨迹文件连接。
 
-## 1. 一次下载酒店的高、低质量两个场景
+## 1. 一次下载三个场景的高、低质量版本
 
 ```bash
 git clone https://github.com/yankaiyang317-web/gs-agent-eval.git
@@ -10,7 +10,7 @@ cd gs-agent-eval
 python scripts/download_benchmark.py
 ```
 
-默认下载低质量场景/碰撞、高质量参考、原高质量酒店碰撞GLB、两种场景运行配置和冻结状态。若要复建校准或做补图训练，再加`--inputs`下载160张合成RGB及对应辅助RGB-D。高、低质量场景在同一个酒店场景数据包中，默认一起下载。数据来自GitHub Release，代码Git历史不承载大文件。
+默认下载 jiudian、guju、laojie 三个场景各自的高、低质量 PLY、碰撞 GLB、运行配置，以及酒店冻结评测状态。每一对高低质量场景在同一个数据包中，默认一起下载。若要重建酒店校准或做补图训练，再加 `--inputs` 下载酒店的160张合成RGB及对应辅助RGB-D。数据来自GitHub Release，代码Git历史不承载大文件。guju和laojie的高清合成重建输入尚未发布，训练选择和结果元数据已在场景包中。
 
 ```bash
 python scripts/download_benchmark.py --inputs
@@ -54,7 +54,7 @@ python -m gs_agent_eval compare \
 
 注意独立重复、同起点和同运行条件。不同评测实现/状态/预算不能直接混比。
 
-## 选择两个场景进行测试
+## 选择高质量或退化版场景进行测试
 
 两个场景默认都已下载，在原 gs-agent 的运行环境中选择配置：
 
@@ -67,3 +67,5 @@ python -m gs_mcp.server --scene-manifest /absolute/gs-agent-eval/scenes/jiudian_
 ```
 
 高质量起点 `[0,0,0]`，低质量起点 `[0,0,-0.15]`；各自的原有相机、碰撞参数与网格均保留。只挂载单个场景目录时，高质量使用 `datasets/jiudian/reference/scene.json`，低质量使用 `datasets/jiudian/navigation/scene.json`。两个都可用于运行测试；当前冻结评分协议专门对应低质量 `jiudian_degraded` 的探索轨迹，不能直接将高质量运行分数混进该基准。
+
+新增的 guju、laojie 同样分别提供 `scenes/guju.json`、`scenes/guju_degraded.json`、`scenes/laojie.json`、`scenes/laojie_degraded.json`。各自的 `datasets/<scene>/reference/scene.json` 与 `navigation/scene.json` 可单独挂载。退化版默认使用原场景碰撞网格的副本，减少漂浮点导致的额外阻塞；`navigation/scene_sparse_collision.json` 可试验直接从退化 PLY 生成的碰撞体。**当前酒店的冻结 A/B 基准不能直接用于这两个新场景**，要评分需另建固定参考域和可靠性状态。

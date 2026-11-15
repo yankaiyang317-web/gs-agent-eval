@@ -48,12 +48,17 @@ def download(url,target,expected):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);parser.add_argument('--inputs',action='store_true',help='Also download all160 reconstruction RGB-D inputs');parser.add_argument('--verify-only',action='store_true');args=parser.parse_args()
-    root=args.root.resolve();manifest=json.loads((root/'datasets/jiudian-downloads.json').read_text(encoding='utf-8'));selected=[a for a in manifest['archives'] if not a.get('optional') or args.inputs]
+    root=args.root.resolve()
+    archives=[]
+    for name in ('jiudian-downloads.json','scene-downloads.json'):
+        manifest=json.loads((root/'datasets'/name).read_text(encoding='utf-8'))
+        archives.extend(manifest['archives'])
+    selected=[a for a in archives if not a.get('optional') or args.inputs]
     for asset in selected:
         if not args.verify_only:
             print('Downloading/verifying',asset['name'],flush=True);archive=root/'.downloads'/asset['name'];download(asset['url'],archive,asset['sha256']);extract_verified(archive,root,asset['members'])
         else:verify_files(root,asset['members'])
         print('Verified',asset['name'],len(asset['members']),'files',flush=True)
-    print('Ready: low-quality scenes/jiudian_degraded.json; high-quality scenes/jiudian.json. Portable mounts: datasets/jiudian/navigation/scene.json and datasets/jiudian/reference/scene.json.',flush=True)
+    print('Ready: high-quality and degraded jiudian, guju and laojie scenes. See scenes/*.json for host runtime configs.',flush=True)
 
 if __name__=='__main__':main()

@@ -31,3 +31,9 @@ Use identical starts, FOV, collision settings and81 recorded-frame budgets when 
 The scene is a deliberately degraded synthetic reconstruction, not naturally incomplete real capture. The reference domain is partial and not demonstrated to have converged to all physical surfaces. B is a frozen scalar3DGS view-utility adaptation, not a full reproduction of2D GauSS-MI. It does not remove between-frame redundancy and cannot fully score absent Gaussians. Depth-derived normal differences can amplify depth noise.
 
 GT-assisted RGB-D supplementation has a small single-scene pilot; RGB-only or generative video enhancement is not validated by that result. Public availability does not by itself select a new software/data license; no additional third-party license is asserted here.
+
+## Additional guju and laojie navigation scenes
+
+The `guju-laojie-scenes-v1` release provides both the high-quality PLY and a sparse reconstruction for each scene, along with runtime configs and collision GLBs. The high-quality PLYs were used to render synthetic RGB at 1920×1440 and auxiliary RGB-D at 480×360. Guju was rebuilt from 64 selected RGB views; laojie was rebuilt from 128 views because a 64-view comparison lost too much building structure. Both used 960×720 training for 10000 steps. Four camera positions (32 views) were held out for each scene. The 64-view laojie PLY is also archived as an alternative, not the default runtime scene.
+
+The default degraded configs use copies of the original scene collision GLBs. Splat-transform 3.0.0 collision candidates derived from the degraded PLYs are included with separate `scene_sparse_collision.json` configs. Guju's candidate restricted movement close to the start, so it is not the default. Initial-pose and short-direction collision probes passed; full navigation routes have not been validated. These scenes have no frozen A/B evaluation state in this release. The hotel benchmark remains unchanged.

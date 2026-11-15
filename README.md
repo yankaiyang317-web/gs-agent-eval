@@ -1,6 +1,6 @@
 # GSAgent Eval
 
-Standalone offline evaluation for GSAgent trajectories, with a downloadable hotel baseline scene.
+Standalone offline evaluation for GSAgent trajectories, with downloadable high-quality and degraded scenes.
 
 独立评测器 **v0.1.1**，与 [原 gs-agent 项目](https://github.com/yankaiyang317-web/gs-agent) 配合使用。当前基准 **jiudian_degraded_full_inputs_v1**：A衡量固定参考域的探索覆盖，B衡量固定模型薄弱区域的视角价值；两项分开，不合成总分。
 
@@ -14,14 +14,18 @@ cd gs-agent-eval
 python scripts/download_benchmark.py
 ```
 
-默认同时下载酒店的**高质量和低质量两个场景**，各自包含 PLY、碰撞 GLB 和运行配置，统一放在 [酒店场景数据包](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/jiudian-scenes-v1)。同一命令还会下载固定评测状态；`--inputs` 额外下载全部 160 张合成重建输入。下载后逐文件校验，不需要再手动传场景。
+默认同时下载 **jiudian、guju、laojie 各自的高质量和退化版**，每对场景都包含 PLY、碰撞 GLB 和运行配置。酒店在[酒店场景数据包](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/jiudian-scenes-v1)，guju 与 laojie 在[新增场景数据包](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/guju-laojie-scenes-v1)。同一命令还会下载酒店固定评测状态；`--inputs` 额外下载酒店的 160 张合成重建输入。下载后逐文件校验，不需要再手动传场景。
 
 | 场景 | 用途 | 原 Agent 的配置入口 |
 |---|---|---|
 | 高质量酒店 `jiudian` | 原 Agent 默认探索的酒店，可直接运行测试 | `scenes/jiudian.json` |
 | 低质量酒店 `jiudian_degraded` | 本仓库的低质量探索与离线评测基线 | `scenes/jiudian_degraded.json` |
+| 高质量故居 `guju` | 原场景探索与参考 | `scenes/guju.json` |
+| 退化故居 `guju_degraded` | 64 张高清渲染输入、10000 步重建的探索场景 | `scenes/guju_degraded.json` |
+| 高质量老街 `laojie` | 原场景探索与参考 | `scenes/laojie.json` |
+| 退化老街 `laojie_degraded` | 128 张高清渲染输入、10000 步重建的探索场景 | `scenes/laojie_degraded.json` |
 
-在原 Agent 的运行环境中选择对应 config 即可。高质量目录为 `datasets/jiudian/reference/`，低质量目录为 `datasets/jiudian/navigation/`，都附带便携的 `scene.json`。测试低质量场景时，Agent 只加载低质量目录；高质量数据和固定评测状态用于离线评分。详见 [使用说明](docs/USAGE_WITH_AGENT.md) 和 [数据说明](datasets/DATA_CARD.md)。
+在原 Agent 的运行环境中选择对应 config 即可。每个场景的高质量目录为 `datasets/<scene>/reference/`，低质量目录为 `datasets/<scene>/navigation/`，都附带便携的 `scene.json`。guju 和 laojie 的退化版默认使用各自原场景的碰撞网格，另附从退化 PLY 生成的 splat-transform 碰撞候选和独立配置。**当前冻结的 A/B 评分协议仍只适用于 `jiudian_degraded`**；新增两场景尚未建立固定评测状态。详见 [使用说明](docs/USAGE_WITH_AGENT.md) 和 [数据说明](datasets/DATA_CARD.md)。
 
 ```bash
 # 在CUDA环境安装；测试过的版本见requirements-tested.txt。
@@ -49,7 +53,7 @@ python -m gs_agent_eval compare --inputs outputs/a/summary.json outputs/b/summar
 ## 目录
 
 - `gs_agent_eval/`, `gs_eval/`：独立CLI和评分核心。
-- `benchmarks/`, `scenes/`, `datasets/jiudian-downloads.json`：冻结协议、导航入口和数据下载清单。
+- `benchmarks/`, `scenes/`, `datasets/*-downloads.json`：冻结协议、导航入口和数据下载清单。
 - `templates/`, `tests/`, `fixtures/`：运行元数据、CPU测试和历史轨迹回归样本。
 - `provenance/`, `research_snapshots/`：来源、历史实验报告和原场景专用研究脚本。
 - `datasets/jiudian/`, `benchmark_data/`, `outputs/`：下载数据、冻结状态和新结果，均不进入Git。
