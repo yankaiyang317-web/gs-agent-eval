@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "repository": "yankaiyang317-web/gs-agent-eval",
-  "release": "guju-laojie-scenes-v1",
+  "release": "gs-agent-scenes-v2",
   "archives": [
     {
       "name": "guju-scenes-v1.tar.gz",
-      "url": "https://github.com/yankaiyang317-web/gs-agent-eval/releases/download/guju-laojie-scenes-v1/guju-scenes-v1.tar.gz",
+      "url": "https://github.com/yankaiyang317-web/gs-agent-eval/releases/download/gs-agent-scenes-v2/guju-scenes-v1.tar.gz",
       "bytes": 406801691,
       "sha256": "2be912c0be74f2c1f58bb979c5f4bbdf6d068023f94e68efb5452c47ab294be2",
       "optional": false,
@@ -32,7 +32,7 @@
     },
     {
       "name": "laojie-scenes-v1.tar.gz",
-      "url": "https://github.com/yankaiyang317-web/gs-agent-eval/releases/download/guju-laojie-scenes-v1/laojie-scenes-v1.tar.gz",
+      "url": "https://github.com/yankaiyang317-web/gs-agent-eval/releases/download/gs-agent-scenes-v2/laojie-scenes-v1.tar.gz",
       "bytes": 606285797,
       "sha256": "5df2658a5a029384a820ece8ec336b6eb79982f2e8c397b83deb3b5060ece7f1",
       "optional": false,

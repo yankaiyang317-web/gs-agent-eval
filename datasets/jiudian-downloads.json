@@ -7,7 +7,7 @@
   "archives": [
     {
       "name": "jiudian-scenes-v1.tar.gz",
-      "url": "https://github.com/yankaiyang317-web/gs-agent-eval/releases/download/jiudian-scenes-v1/jiudian-scenes-v1.tar.gz",
+      "url": "https://github.com/yankaiyang317-web/gs-agent-eval/releases/download/gs-agent-scenes-v2/jiudian-scenes-v1.tar.gz",
       "bytes": 371928159,
       "sha256": "6ca7a5cd1310de4c24b95d71b4c4d40b872077a4399fb4581fb9ab20320989a3",
       "optional": false,

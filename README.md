@@ -14,7 +14,7 @@ cd gs-agent-eval
 python scripts/download_benchmark.py
 ```
 
-默认同时下载 **jiudian、guju、laojie 各自的高质量和退化版**，每对场景都包含 PLY、碰撞 GLB 和运行配置。酒店在[酒店场景数据包](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/jiudian-scenes-v1)，guju 与 laojie 在[新增场景数据包](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/guju-laojie-scenes-v1)。同一命令还会下载酒店固定评测状态；`--inputs` 额外下载酒店的 160 张合成重建输入。下载后逐文件校验，不需要再手动传场景。
+默认从[统一场景 Release](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/gs-agent-scenes-v2) 下载 **jiudian、guju、laojie 各自的高质量和退化版**，每对场景都包含 PLY、碰撞 GLB 和运行配置。同一命令还会下载酒店固定评测状态；`--inputs` 额外下载酒店的 160 张合成重建输入。下载后逐文件校验，不需要再手动传场景。
 
 | 场景 | 用途 | 原 Agent 的配置入口 |
 |---|---|---|
