@@ -47,10 +47,10 @@ def download(url,target,expected):
     part.replace(target)
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);parser.add_argument('--inputs',action='store_true',help='Also download all160 reconstruction RGB-D inputs');parser.add_argument('--verify-only',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);parser.add_argument('--inputs',action='store_true',help='Also download all 160 synthetic RGB and depth inputs for each scene');parser.add_argument('--verify-only',action='store_true');args=parser.parse_args()
     root=args.root.resolve()
     archives=[]
-    for name in ('jiudian-downloads.json','scene-downloads.json'):
+    for name in ('jiudian-downloads.json','scene-downloads.json','new-benchmark-downloads.json'):
         manifest=json.loads((root/'datasets'/name).read_text(encoding='utf-8'))
         archives.extend(manifest['archives'])
     selected=[a for a in archives if not a.get('optional') or args.inputs]
@@ -59,6 +59,6 @@ def main():
             print('Downloading/verifying',asset['name'],flush=True);archive=root/'.downloads'/asset['name'];download(asset['url'],archive,asset['sha256']);extract_verified(archive,root,asset['members'])
         else:verify_files(root,asset['members'])
         print('Verified',asset['name'],len(asset['members']),'files',flush=True)
-    print('Ready: high-quality and degraded jiudian, guju and laojie scenes. See scenes/*.json for host runtime configs.',flush=True)
+    print('Ready: high-quality and degraded jiudian, guju and laojie scenes, plus their fixed scoring states. See scenes/*.json for host runtime configs.',flush=True)
 
 if __name__=='__main__':main()

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gs-agent-eval"
-version = "0.1.1"
+version = "0.1.2"
 description = "Frozen offline coverage and weak-region view utility evaluation for GSAgent trajectories"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.26", "Pillow>=10", "plyfile>=1.1", "matplotlib>=3.8"]
