@@ -68,13 +68,13 @@ python -m gs_mcp.server --scene-manifest /absolute/gs-agent-eval/scenes/jiudian_
 
 高质量起点 `[0,0,0]`，低质量起点 `[0,0,-0.15]`；各自的原有相机、碰撞参数与网格均保留。只挂载单个场景目录时，高质量使用 `datasets/jiudian/reference/scene.json`，低质量使用 `datasets/jiudian/navigation/scene.json`。两个都可用于运行测试；当前冻结评分协议专门对应低质量 `jiudian_degraded` 的探索轨迹，不能直接将高质量运行分数混进该基准。
 
-新增的 guju、laojie 同样分别提供 `scenes/guju.json`、`scenes/guju_degraded.json`、`scenes/laojie.json`、`scenes/laojie_degraded.json`。各自的 `datasets/<scene>/reference/scene.json` 与 `navigation/scene.json` 可单独挂载。退化版默认使用原场景碰撞网格的副本，减少漂浮点导致的额外阻塞；`navigation/scene_sparse_collision.json` 可试验直接从退化 PLY 生成的碰撞体。评分时分别选用 `benchmarks/guju_degraded_full_inputs_v1.json` 或 `benchmarks/laojie_degraded_full_inputs_v2.json`。两个基准各自使用 160 个固定高质量参考视角、实际训练的 64 或 128 张 RGB-D 输入建立状态；laojie v2 记录了原始起点图像导出的倾斜 world-up。两个退化场景现各有一段 81 帧脚本化探索评分；它们不代表自主 Agent 成绩。
+故居、老街新版分别提供高质量的 `scenes/guju.json`、`scenes/laojie.json`，以及低质量的 `scenes/guju_degraded_overlap.json`、`scenes/laojie_degraded_overlap.json`。各自的 `datasets/<scene>/reference/scene.json` 与 `navigation/scene_overlap.json` 可单独挂载。低质量版默认使用各自高质量场景的固定碰撞网格，避免缺陷使 Agent 被卡住；`navigation/scene_overlap_sparse_collision.json` 可试验从新版低质量 PLY 生成的碰撞体，但路线检查发现它会额外阻挡部分视角。评分时使用对应的新版 benchmark ID；旧版 81 帧轨迹和补建结果不可用于新版模型。
 
 ```bash
-python -m gs_agent_eval verify --benchmark benchmarks/guju_degraded_full_inputs_v1.json
-python -m gs_agent_eval verify --benchmark benchmarks/laojie_degraded_full_inputs_v2.json
-python -m gs_agent_eval score --benchmark benchmarks/guju_degraded_full_inputs_v1.json --run-dir /absolute/guju_degraded_run --out outputs/guju_method_a
-python -m gs_agent_eval score --benchmark benchmarks/laojie_degraded_full_inputs_v2.json --run-dir /absolute/laojie_degraded_run --out outputs/laojie_method_a
+python -m gs_agent_eval verify --benchmark benchmarks/guju_degraded_overlap_20261127.json
+python -m gs_agent_eval verify --benchmark benchmarks/laojie_degraded_overlap_20261127.json
+python -m gs_agent_eval score --benchmark benchmarks/guju_degraded_overlap_20261127.json --run-dir /absolute/guju_overlap_run --out outputs/guju_method_a
+python -m gs_agent_eval score --benchmark benchmarks/laojie_degraded_overlap_20261127.json --run-dir /absolute/laojie_overlap_run --out outputs/laojie_method_a
 ```
 
-两个场景的评测状态独立，不能把一个场景的轨迹送进另一个场景的基准。视频和补建试验结果见[新场景试验报告](NEW_SCENE_PILOT_20261125.md)。
+两个场景的评测状态独立，不能把一个场景的轨迹送进另一个场景的基准。新版输入、缺损、碰撞和状态限制见[新版报告](OVERLAP_BASELINES_20261127.md)；[旧试验报告](NEW_SCENE_PILOT_20261125.md)只适用于历史低质量 PLY。

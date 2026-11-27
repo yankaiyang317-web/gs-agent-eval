@@ -47,7 +47,7 @@ def download(url,target,expected):
     part.replace(target)
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);parser.add_argument('--inputs',action='store_true',help='Also download all 160 synthetic RGB and depth inputs for each scene');parser.add_argument('--verify-only',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);parser.add_argument('--inputs',action='store_true',help='Also download synthetic RGB and depth reconstruction inputs');parser.add_argument('--verify-only',action='store_true');args=parser.parse_args()
     root=args.root.resolve()
     archives=[]
     for name in ('jiudian-downloads.json','scene-downloads.json','new-benchmark-downloads.json'):

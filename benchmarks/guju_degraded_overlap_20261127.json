@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "guju_degraded_overlap_20261127",
+  "scene_name": "guju_degraded_overlap",
+  "frozen_on": "2026-11-27",
+  "status": "fixed_scene_state_pilot; B predictive validity unvalidated; no new Agent trajectory scored",
+  "locations": {
+    "asset_root": "../datasets/guju",
+    "state_root": "../benchmark_data/guju_degraded_overlap_20261127"
+  },
+  "assets": {
+    "low_ply": {
+      "path": "${asset_root}/navigation/guju_degraded_overlap.ply",
+      "sha256": "a411bc47f76e85d43e27ded1db2a6996ce2fa49d9693090b223a9c780df6d71f"
+    },
+    "high_ply": {
+      "path": "${asset_root}/reference/guju_reference.ply",
+      "sha256": "ad7b0fc3e2a08678719fa4434b7c5152a476d59e33eca60896c559a0dcec7b21"
+    },
+    "collision": {
+      "path": "${asset_root}/navigation/guju_degraded_overlap.collision.glb",
+      "sha256": "1cd229090d2fa2f8186e16a222641f40008e35007eb5be5517572a6f3a0c5c24"
+    },
+    "reference_surface": {
+      "path": "${state_root}/reference_surface.npz",
+      "sha256": "718275c5b98ec0f3a102ba4012d2ab6bcb62b910655e90400aec72e8ae57efe3"
+    },
+    "defect_weights": {
+      "path": "${state_root}/defect_weights.npz",
+      "sha256": "64b9222606b83d50d2d53be2f08c9ca04a970ac71c038937148a74e9de49560f"
+    },
+    "reliability": {
+      "path": "${state_root}/reliability_RGBDN.npz",
+      "sha256": "5fa2bbdfec0dbf34810bae529b0f1d8698d54f85733d9ec7b2ba31e560048303"
+    },
+    "calibration_protocol": {
+      "path": "${state_root}/calibration_protocol.json",
+      "sha256": "373953b71a3ed673ca79a81e6f9d84db894a8d537e4b0db87da59b488c68aebd"
+    }
+  },
+  "budget": {
+    "frames": 81,
+    "unit": "recorded_frames_including_interpolation_and_duplicates"
+  },
+  "camera_fov_signature": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "coordinates": {
+    "camera": "OpenCV camera_to_world, +X right, +Y down, +Z forward",
+    "world_up": [
+      0,
+      -1,
+      0
+    ]
+  },
+  "navigation": {
+    "collision_sha256": "1cd229090d2fa2f8186e16a222641f40008e35007eb5be5517572a6f3a0c5c24",
+    "camera_radius": 0.25,
+    "camera_body_height": 0.9,
+    "collision_step": 0.02
+  },
+  "scoring": {
+    "high_to_low_similarity": {
+      "scale": 1.0,
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "verified": true,
+      "evidence": "Degraded reconstruction used synthetic renders from this source PLY with the recorded transforms; no SfM alignment."
+    },
+    "roi": {
+      "min": [
+        -100.0,
+        -100.0,
+        -100.0
+      ],
+      "max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "evaluation_camera": {
+      "width": 320,
+      "height": 240,
+      "resize_policy": "preserve_fov"
+    },
+    "surface": {
+      "voxel_size": 0.2,
+      "reference_pixel_stride": 2,
+      "near": 0.1,
+      "far": 50.0,
+      "alpha_high_min": 0.9,
+      "visibility_abs_tolerance": 0.1,
+      "visibility_rel_tolerance": 0.01,
+      "min_projected_voxel_pixels": 1.0
+    },
+    "residual": {
+      "rgb_weight": 1.0,
+      "depth_weight": 1.0,
+      "depth_relative_clip": 1.0,
+      "depth_floor": 0.1,
+      "alpha_low_depth_min": 0.7,
+      "loss_epsilon": 0.0001
+    },
+    "trajectory_checks": {
+      "translation_jump": 2.0,
+      "rotation_jump_deg": 120.0
+    }
+  },
+  "reference_domain": {
+    "reachability": "96 new candidate route poses checked against default fixed collision mesh; reference domain remains 160 historical high-quality viewpoints",
+    "meaning": "fixed 160-view synthetic camera bank pseudo-GT domain; not complete physical scene",
+    "connected_positions": 20,
+    "reference_views": 160,
+    "frozen_before_test_trajectories": true,
+    "pilot_resolution": true
+  },
+  "calibration": {
+    "frames": 192,
+    "heldout_excluded": 32,
+    "source": "all unique poses among actual 960x720 synthetic reconstruction RGB and 480x360 saved auxiliary depth; no original photographs/COLMAP",
+    "normal_source": "finite differences of saved depth",
+    "lambda_evidence": 0.01,
+    "lambda_loss": 10,
+    "normal_weight": 0.15,
+    "state": "immutable per-Gaussian scalar logodds RGBDN",
+    "limitations": [
+      "not full 2D GauSS-MI",
+      "p is not externally calibrated correctness probability",
+      "B does not remove temporal redundancy",
+      "absent Gaussians can receive no evidence",
+      "Most Gaussian probabilities remain within 0.45..0.55; predictive validity unvalidated"
+    ],
+    "training_image_files": 192,
+    "old_heldout_near_new_training_pose": 10
+  }
+}

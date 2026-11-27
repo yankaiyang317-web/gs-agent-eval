@@ -2,7 +2,7 @@
 
 Standalone offline evaluation for GSAgent trajectories, with downloadable high-quality and degraded scenes.
 
-独立评测器 **v0.1.2**，与 [原 gs-agent 项目](https://github.com/yankaiyang317-web/gs-agent) 配合使用。三个退化场景分别有独立的固定基准：`jiudian_degraded_full_inputs_v1`、`guju_degraded_full_inputs_v1`、`laojie_degraded_full_inputs_v2`。A 衡量固定参考域的探索覆盖，B 衡量固定模型薄弱区域的视角价值；两项分开，不合成总分，也不跨场景比较原始分数。
+独立评测器 **v0.1.2**，与 [原 gs-agent 项目](https://github.com/yankaiyang317-web/gs-agent) 配合使用。默认基准为 `jiudian_degraded_full_inputs_v1`、`guju_degraded_overlap_20261127`、`laojie_degraded_overlap_20261127`。A 衡量固定参考域的探索覆盖，B 衡量固定模型薄弱区域的视角价值；两项分开，不合成总分，也不跨场景比较原始分数。
 
 ![酒店低质量导航场景](docs/images/jiudian_baseline.jpg)
 
@@ -14,18 +14,18 @@ cd gs-agent-eval
 python scripts/download_benchmark.py
 ```
 
-默认从[统一场景 Release](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/gs-agent-scenes-v2) 下载 **jiudian、guju、laojie 各自的高质量和退化版**，每对场景都包含 PLY、碰撞 GLB 和运行配置，同时下载三个场景各自的固定评分状态。`--inputs` 额外下载每个场景 160 张合成 RGB、辅助深度、逐帧位姿及训练选帧记录。原始实拍照片和 COLMAP 不存在。下载后逐文件校验。
+默认从[酒店 Release](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/gs-agent-scenes-v2)和[故居、老街新版 Release](https://github.com/yankaiyang317-web/gs-agent-eval/releases/tag/gs-agent-scenes-v3)下载 **jiudian、guju、laojie 各自的高质量和退化版**，每对场景都包含 PLY、碰撞 GLB 和运行配置，同时下载对应固定评分状态。`--inputs` 可额外下载酒店已公开的 160 张合成 RGB 与辅助深度。故居 192 张、老街 256 张新版合成输入图暂留 machine25，未公开；选图、位姿和训练协议元数据随场景包公开。原始实拍照片和 COLMAP 不存在。下载后逐文件校验。
 
 | 场景 | 用途 | 原 Agent 的配置入口 |
 |---|---|---|
 | 高质量酒店 `jiudian` | 原 Agent 默认探索的酒店，可直接运行测试 | `scenes/jiudian.json` |
 | 低质量酒店 `jiudian_degraded` | 本仓库的低质量探索与离线评测基线 | `scenes/jiudian_degraded.json` |
 | 高质量故居 `guju` | 原场景探索与参考 | `scenes/guju.json` |
-| 退化故居 `guju_degraded` | 64 张高清渲染输入、10000 步重建的探索场景 | `scenes/guju_degraded.json` |
+| 退化故居 `guju_degraded_overlap` | 192 张重叠视角、15000 步重建，局部立面受控缺失 | `scenes/guju_degraded_overlap.json` |
 | 高质量老街 `laojie` | 原场景探索与参考 | `scenes/laojie.json` |
-| 退化老街 `laojie_degraded` | 128 张高清渲染输入、10000 步重建的探索场景 | `scenes/laojie_degraded.json` |
+| 退化老街 `laojie_degraded_overlap` | 256 张重叠视角、15000 步重建，桥亭仍薄弱 | `scenes/laojie_degraded_overlap.json` |
 
-在原 Agent 的运行环境中选择对应 config 即可。每个场景的高质量目录为 `datasets/<scene>/reference/`，低质量目录为 `datasets/<scene>/navigation/`，都附带便携的 `scene.json`。guju 和 laojie 的退化版默认使用各自原场景的碰撞网格，另附从退化 PLY 生成的 splat-transform 碰撞候选和独立配置。两个新场景的 A/B 状态已由各自训练输入单独建立；各有一段 81 帧脚本化覆盖探索的视频、评分与补建试验，详见[试验报告](docs/NEW_SCENE_PILOT_20261125.md)。这两段轨迹不是自主 Agent 的成绩。另见[使用说明](docs/USAGE_WITH_AGENT.md)和[数据说明](datasets/DATA_CARD.md)。
+在原 Agent 的运行环境中选择对应 config 即可。每个场景的高质量目录为 `datasets/<scene>/reference/`，低质量目录为 `datasets/<scene>/navigation/`。故居和老街新版默认使用各自高质量场景的固定碰撞网格，另附从新版退化 PLY 生成的 splattransform 碰撞候选与独立配置。新版的训练、画面、碰撞和评分状态验收见[新版报告](docs/OVERLAP_BASELINES_20261127.md)。[旧版 81 帧试验](docs/NEW_SCENE_PILOT_20261125.md)仅适用于旧 PLY；不能作为新版成绩。另见[使用说明](docs/USAGE_WITH_AGENT.md)和[数据说明](datasets/DATA_CARD.md)。
 
 ```bash
 # 在CUDA环境安装；测试过的版本见requirements-tested.txt。
